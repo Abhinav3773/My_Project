@@ -1,0 +1,77 @@
+/* *{ */
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Alegreya Sans', sans-serif; */
+    /* font-family: 'Oswald', sans-serif; */
+/* } */
+/* body{ */
+    /* overflow-x: hidden; */
+/* } */
+/* .navbar-nav{
+    margin-left: auto;
+} */
+
+
+
+
+
+
+
+
+.caro_{
+    /* width: 100vw; */
+    height: 100vh;
+}
+/* .caro_ img{
+    width: 100%;
+    height: 100vh;
+    vertical-align: top;
+} */
+.carousel-item  img{
+    /* border: 8px solid greenyellow; */
+    /* background-size: cover; */
+    
+    /* width: 100%; */
+    height: 95vh;
+}
+
+.profile_{
+    /* border: 2px solid black;   */
+    text-align: center;
+}
+.img_container_{
+    margin-bottom: 0 !important;
+    border: 11px solid #017e7e;
+    /* background: linear-gradient(#017e7e, #fdffff); */
+    border-radius: 50%;
+}
+
+.profile_photo_ {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    padding: 5px;
+    
+}
+
+hr{
+    background-color: #035e5e;
+    height: 4px;
+    width: 30vw;
+  
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+h2{
+    text-align: center;
+   font-weight: 500;
+   line-height: 1.2;
+   color: #017e7e;
+}
+

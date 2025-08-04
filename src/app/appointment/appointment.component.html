@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<div class="appointment_ mx-auto">
+    <h2 class="my-3">Book an Appointment at Ved Dental Clinic </h2>
+    <!-- <hr class="mx-auto" /> -->
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-8 col-md-8 col-10 col-xxl-8 mx-auto">
+                    <form class="form_" [formGroup]="appointmentForm" (ngSubmit)="appointmentBook()">
+                    
+                        <div class="form-group mb-3">
+                          <label for="patientName" class="form-label label_">Patient Name</label>
+                          <input type="text" placeholder="Enter your name" class="form-control tel_" id="patientName" formControlName="patientName">
+                          <p *ngIf="appointmentForm.controls['patientName'].errors && appointmentForm.controls['patientName'].touched" class="alert alert-danger">This feild is required</p>
+                        </div>
+
+                          <div class="form-group mb-3">
+                            <label for="dateInput" class="form-label label_">Select a Date</label>
+                            <input type="date" class="form-control tel_" id="dateInput" name="dateInput" formControlName="dateInput"  [min]="today" [max]="maxDate" >
+                            <p *ngIf="appointmentForm.controls['dateInput'].errors && appointmentForm.controls['dateInput'].touched" class="alert alert-danger">This feild is required</p>
+                          </div> 
+
+                          <div class="form-group mb-3">
+                            <label for="timeInput" class="form-label label_">Select a Time</label>
+                            <input type="time" class="form-control tel_" id="timeInput" formControlName="timeInput">
+                            <p *ngIf="appointmentForm.controls['timeInput'].errors && appointmentForm.controls['timeInput'].touched" class="alert alert-danger">This feild is required</p>
+                          </div>
+                        
+                          <div class="form-group mb-3">
+                            <label for="problemDescription" class="form-label label_">Descride Problem</label>
+                            <textarea class="form-control tel_" placeholder="Ex- Cavity" id="problemDescription" rows="2" formControlName="problemDescription"></textarea>
+                            <p *ngIf="appointmentForm.controls['problemDescription'].errors && appointmentForm.controls['problemDescription'].touched" class="alert alert-danger">This feild is required</p>
+                          </div>
+                        <div class="btn_container_">
+                            <button type="submit" class="btn" (click)="success()" [disabled]="!appointmentForm.valid">Submit</button>
+                        </div>
+                        
+                      </form>
+                      <!-- <div *ngIf="errorMessage!=null">
+                          <span class="text-danger">{{errorMessage}}</span>
+                      </div> -->
+                      <div *ngIf="successMessage!=null">
+                        <span class="text-success">{{successMessage}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

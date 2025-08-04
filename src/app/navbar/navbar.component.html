@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- navbar Start  -->
+<div class="nav_">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" routerLink="/home" href="">Ved Dental</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active home_ btn_" routerLink="/home" aria-current="page" href="#">
+                  <span class="">Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active contact_ btn_" routerLink="/contact" href="">
+                  <span class="">Contact Us</span></a>
+              </li>
+              
+            </ul>
+            <!-- <form class="d-flex"> -->
+                
+                <!-- <button class="btn btn_" type="submit">Book Appointment</button> -->
+                
+                <li class="nav-item" style="list-style-type: none;" *ngIf='!isAuthenticate' (click)="login()">
+                    <a class="btn_" routerLink="/login">
+                      <span class="">Login/Register</span>
+                    </a>
+               </li>
+               
+               <li class="nav-item" style="list-style-type: none;" *ngIf='otpVerification'>
+                <!-- <li class="nav-item" style="list-style-type: none;"> -->
+                <a class="btn_ book_appointment_" routerLink="/appointment">
+                    <!-- <i class="calender_ bi bi-calendar-month-fill"></i> -->
+                    <span class="span_">Book Appointment</span>
+                  </a>
+
+                  <a class="btn_ my_appointments_" routerLink="/myappointments">
+                    <!-- <i class="calender_ bi bi-calendar-month-fill"></i> -->
+                    <span class="span_">My Appointments</span>
+                  </a>
+               </li>
+                  <!-- </form> -->
+          </div>
+        </div>
+      </nav>
+</div>
+
+    <!-- navbar End  -->
+
+</body>
+</html>

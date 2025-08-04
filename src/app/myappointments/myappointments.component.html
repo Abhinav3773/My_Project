@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="my_appointments mx-auto">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Appointment Time</th>
+                <th scope="col">Problem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let record of data; let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{record.patientName}}</td>
+                <td>{{record.appointmentDate}}</td>
+                <td>{{record.appointmentTime}}</td>
+                <td>{{record.problem}}</td>
+                <!-- <td><i class="bi bi-arrow-clockwise text-success"></i></td> -->
+
+                <!-- ///////// TESTING /////////////// -->
+
+                <!-- Button to trigger the modal -->
+                <td><i class="bi bi-arrow-clockwise text-success" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reschedule Your Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Datepicker goes here -->
+        <!-- <input type="text" class="form-control" id="datetimepicker"> -->
+
+        <form class="form_" [formGroup]="rescheduleAppointmentForm" (ngSubmit)="rescheduleMyAppointment(record.appointmentId); successRescheduleMessage()">
+
+        <div class="form-group mb-3">
+          <label for="dateInput" class="form-label label_">Select a Date</label>
+          <input type="date" class="form-control tel_" id="dateInput" name="dateInput" formControlName="dateInput">
+          <!-- <p *ngIf="rescheduleAppointmentForm.controls['dateInput'].errors && rescheduleAppointmentForm.controls['dateInput'].touched" class="alert alert-danger">This feild is required</p> -->
+        </div> 
+
+        <div class="form-group mb-3">
+          <label for="timeInput" class="form-label label_">Select a Time</label>
+          <input type="time" class="form-control tel_" id="timeInput" formControlName="timeInput">
+          <!-- <p *ngIf="rescheduleAppointmentForm.controls['timeInput'].errors && rescheduleAppointmentForm.controls['timeInput'].touched" class="alert alert-danger">This feild is required</p> -->
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-outline-success" data-bs-dismiss="modal">Reschedule</button>
+        </div>
+      </form>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+</td>
+
+
+
+                <!-- /////////////////////////////////// -->
+
+
+                <td><i class="bi bi-trash text-danger" (click)="deleteMyAppointment(record.appointmentId); successDeleteMessage()"></i></td>
+              </tr>
+
+              
+            </tbody>
+          </table>
+        
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('#datetimepicker').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm', // Customize the date format as per your requirement
+          minDate: moment().startOf('day') // Disable past dates
+        });
+      });
+    </script>
+    
+</body>
+</html>
+

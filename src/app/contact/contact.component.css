@@ -1,0 +1,41 @@
+.map_{
+    width: 95%;
+    height: 65%;
+}
+
+.bi_{
+    font-size: 1.5rem; 
+    color: #fff;
+    background-color: #128d8d;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    /* border: 2px solid black; */
+    border-radius: 45%;
+    padding: 8px;
+}
+label{
+    font-weight: bold;
+    color: #0d2631;
+}
+
+.btn_container_{
+    /* border: 2px solid black; */
+    margin: auto;
+    text-align: center;
+}
+.btn{
+    margin: auto;
+    background-color: #017e7e; 
+    color: antiquewhite;
+    padding: 5px 50px 5px 50px;
+    border-radius: 5px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+}
+.email_sym_{
+    font-size: 2rem;
+}
+input{
+    border-top: solid transparent;
+    border-left: solid transparent;
+    border-right: solid transparent;
+}

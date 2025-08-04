@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="login_ mx-auto mt-5">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-5 col-md-5 col-4 col-xxl-5 login_img_">
+                    <img class="img_" src="./assets/p1.jpg" alt="">
+                </div>
+
+                <div class="col-lg-7 col-md-7 col-8 col-xxl-7 login_form_">
+                    <h4>Register or Sign In for Appointment</h4>
+                    <p>An OTP will be sent to your mobile number for verification</p>
+
+                    <form class="form_ mt-5" [formGroup]="mobileRegister" >
+                        <div class="form-group mb-3">
+                            <input type="tel" class="form-control tel_" placeholder="Enter your Mobile Number" formControlName="phoneNumber" id="mobileNumber" aria-describedby="mobileHelp">
+                            <p *ngIf="mobileRegister.controls['phoneNumber'].errors && mobileRegister.controls['phoneNumber'].touched" class="alert alert-danger">This feild is required</p>
+                            <div id="mobileHelp" class="form-text">We'll never share your mobile no. with anyone else.</div>
+                        </div>
+
+
+                        <div class="btn_container_ mt-4">
+                            <button type="button" (click)="getOtp()" [disabled]="!mobileRegister.valid" class="btn" routerLink="/otpverification">GET OTP</button>
+                        </div>
+                    </form>
+                    <div *ngIf="errorMessage!=null">
+                        <span class="text-danger">{{errorMessage}}</span>
+                    </div>
+                    <div *ngIf="successMessage!=null">
+                      <span class="text-success">{{successMessage}}</span>
+                  </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

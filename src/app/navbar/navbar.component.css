@@ -1,0 +1,27 @@
+.nav_{
+    background-color: #017e7e !important;
+}
+
+.btn_{
+    border: 2px solid #fff;
+    color: #fff !important;
+    padding: 5px 18px !important;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.calender_{
+    /* padding-right: 20px; */
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+}
+.home_{
+    margin-right: 10px !important;
+}
+.book_appointment_{
+    margin-right: 10px !important;
+}
